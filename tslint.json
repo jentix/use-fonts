@@ -1,0 +1,25 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-react"],
+  "rules": {
+    "no-trailing-whitespace": true,
+    "no-consecutive-blank-lines": [true, 2],
+    "max-line-length": [true, 200],
+    "variable-name": [true, "allow-pascal-case"],
+    "import-name": false,
+    "type-literal-delimiter": true,
+    "align": false,
+    "no-boolean-literal-compare": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "always",
+          "typeLiterals": "always"
+        },
+        "esSpecCompliant": true
+      }
+    ]
+  }
+}

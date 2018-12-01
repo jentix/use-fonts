@@ -2,23 +2,36 @@ import * as React from 'react';
 
 import styled from 'utils/ui/styled';
 
+export type FontObject = {
+  fontName: string;
+  fontUrl: any;
+  fontWeight: string;
+  fontStyle: string;
+};
+
 export type IProps = {
   title?: string;
-  fontName: string;
-  fontUrl: string;
+  fontObject: FontObject;
 };
 
 export type IState = {
   inputValue: string;
 };
 
-export const StyledFontInput = styled.input<IProps>`
+export type StyledFontInputProps = {
+  fontObject: FontObject;
+};
+
+export const StyledFontInput = styled.input<StyledFontInputProps>`
   @font-face {
-    font-family:  ${props => props.fontName};
-    src: url(${props => props.fontUrl});
+    font-family:  ${props => props.fontObject.fontName};
+    src: url(${props => props.fontObject.fontUrl});
+    font-weight: normal;
+    font-style: normal;
   }
-  font-size: 16px;
-  font-family: ${props => props.fontName};
+
+  font-size: 1rem;
+  font-family: ${props => props.fontObject.fontName};
 `;
 
 export default class FontInput extends React.Component<IProps, IState> {
@@ -31,9 +44,9 @@ export default class FontInput extends React.Component<IProps, IState> {
   }
 
   componentDidMount() {
-    const { fontName } = this.props;
+    const { fontObject } = this.props;
     this.setState({
-      inputValue: fontName,
+      inputValue: fontObject.fontName,
     });
   }
 
@@ -48,8 +61,7 @@ export default class FontInput extends React.Component<IProps, IState> {
       <React.Fragment>
         <StyledFontInput
           type="text"
-          fontName={this.props.fontName}
-          fontUrl={this.props.fontUrl}
+          fontObject={this.props.fontObject}
           value={this.state.inputValue}
           onChange={this.onInputChange}
         />

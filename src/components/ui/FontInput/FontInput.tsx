@@ -30,8 +30,10 @@ export const StyledFontInput = styled.input<StyledFontInputProps>`
     font-style: normal;
   }
 
-  font-size: 1rem;
+  font-size: 4rem;
   font-family: ${props => props.fontObject.fontName};
+
+  width: 80vw;
 `;
 
 export default class FontInput extends React.Component<IProps, IState> {

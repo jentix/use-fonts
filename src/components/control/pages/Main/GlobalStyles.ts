@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    /* border: 0; */
-    /* outline: none; */
+    border: 0;
+    outline: none;
   }
 
   html, body {
@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
+    width: 100%;
     grid-area: main;
     grid-row: row2 / row3;
   }

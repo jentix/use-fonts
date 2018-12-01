@@ -4,4 +4,5 @@ module.exports = {
   assets: 'assets',
   types: 'types',
   api: 'api',
+  config: 'config',
 }
